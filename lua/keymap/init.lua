@@ -27,3 +27,6 @@ require("keymap.editor")
 require("keymap.lang")
 require("keymap.tool")
 require("keymap.ui")
+
+-- Custom keymaps
+require("keymap.runner")
