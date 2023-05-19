@@ -19,6 +19,7 @@ local function load_options()
 		clipboard = "unnamedplus",
 		cmdheight = 2, -- 0, 1, 2
 		cmdwinheight = 5,
+		colorcolumn = "80",
 		complete = ".,w,b,k",
 		completeopt = "menuone,noselect",
 		concealcursor = "niv",

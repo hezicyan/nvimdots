@@ -141,6 +141,7 @@ function autocmd.load_autocmds()
 				"nnoremap <leader>h :ClangdSwitchSourceHeaderVSplit<CR>",
 			},
 			{ "FileType", "python", "set expandtab tabstop=4 shiftwidth=4" },
+			{ "FileType", "python,java", "set colorcolumn=120" },
 		},
 		yank = {
 			{
