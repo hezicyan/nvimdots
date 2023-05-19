@@ -28,6 +28,12 @@ return function()
 				"markdown",
 			},
 		}),
+		btns.formatting.shfmt.with({
+			extra_args = { "-i", "2" },
+		}),
+		btns.formatting.stylua.with({
+			extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
+		}),
 	}
 	null_ls.setup({
 		border = "rounded",
