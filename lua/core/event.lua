@@ -140,6 +140,7 @@ function autocmd.load_autocmds()
 				"c,cpp",
 				"nnoremap <leader>h :ClangdSwitchSourceHeaderVSplit<CR>",
 			},
+			{ "FileType", "python", "set expandtab tabstop=4 shiftwidth=4" },
 		},
 		yank = {
 			{
