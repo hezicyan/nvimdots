@@ -43,5 +43,101 @@
         "#endif // $1"
     ],
     "description": "header file definitions"
+  },
+  "read": {
+    "prefix": "read",
+    "body": [
+      "${1:int} Read() {",
+      "\t$1 res = 0;",
+      "\tchar ch;",
+      "\twhile (!isdigit(ch = getchar())) continue;",
+      "\tdo {",
+      "\t\tres = res * 10 + ch - '0';",
+      "\t} while (isdigit(ch = getchar()));",
+      "\treturn res;",
+      "}"
+    ],
+    "description": "reading optimization with getchar"
+  },
+  "readneg": {
+    "prefix": "readneg",
+    "body": [
+      "${1:int} Read() {",
+      "\t$1 res = 0;",
+      "\tbool neg = false;",
+      "\tchar ch;",
+      "\twhile (!isdigit(ch = getchar())) neg |= (ch == '-');",
+      "\tdo {",
+      "\t\tres = res * 10 + ch - '0';",
+      "\t} while (isdigit(ch = getchar()));",
+      "\treturn neg ? -res : res;",
+      "}"
+    ],
+    "description": "reading optimization with getchar, supporting negative numbers"
+  },
+  "readf": {
+    "prefix": "readf",
+    "body": [
+      "char ReadChar() {",
+      "\tstatic const int kBufSize = 1e6;",
+      "\tstatic char inbuf[kBufSize];",
+      "\tstatic char* lim = inbuf;",
+      "\tstatic char* now = inbuf;",
+      "\tif (now == lim) {",
+      "\t\tlim = fread(inbuf, sizeof(char), kBufSize, stdin) + inbuf;",
+      "\t\tnow = inbuf;",
+      "\t}",
+      "\treturn now == lim ? -1 : *(now++);",
+      "}",
+      "",
+      "${1:int} Read() {",
+      "\t$1 res = 0;",
+      "\tchar ch;",
+      "\twhile (!isdigit(ch = ReadChar())) continue;",
+      "\tdo {",
+      "\t\tres = res * 10 + ch - '0';",
+      "\t} while (isdigit(ch = ReadChar()));",
+      "\treturn res;",
+      "}"
+    ],
+    "description": "reading optimization with fread"
+  },
+  "readnegf": {
+    "prefix": "readnegf",
+    "body": [
+      "char ReadChar() {",
+      "\tstatic const int kBufSize = 1e6;",
+      "\tstatic char inbuf[kBufSize];",
+      "\tstatic char* lim = inbuf;",
+      "\tstatic char* now = inbuf;",
+      "\tif (now == lim) {",
+      "\t\tlim = fread(inbuf, sizeof(char), kBufSize, stdin) + inbuf;",
+      "\t\tnow = inbuf;",
+      "\t}",
+      "\treturn now == lim ? -1 : *(now++);",
+      "}",
+      "",
+      "${1:int} Read() {",
+      "\t$1 res = 0;",
+      "\tbool neg = false;",
+      "\tchar ch;",
+      "\twhile (!isdigit(ch = ReadChar())) neg |= (ch == '-');",
+      "\tdo {",
+      "\t\tres = res * 10 + ch - '0';",
+      "\t} while (isdigit(ch = ReadChar()));",
+      "\treturn neg ? -res : res;",
+      "}"
+    ],
+    "description": "reading optimization with fread, supporting negative numbers"
+  },
+  "mainf": {
+    "prefix": "mainf",
+    "body": [
+      "int main() {",
+      "\t${0:// Code here...}",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "main function"
   }
 }
