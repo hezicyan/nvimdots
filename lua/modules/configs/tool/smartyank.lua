@@ -6,7 +6,7 @@ return function()
 			timeout = 2000, -- timeout for clearing the highlight
 		},
 		clipboard = {
-			enabled = true,
+			enabled = false,
 		},
 		tmux = {
 			enabled = true,
