@@ -50,7 +50,7 @@ editor["junegunn/vim-easy-align"] = {
 editor["phaazon/hop.nvim"] = {
 	lazy = true,
 	branch = "v2",
-	event = "BufReadPost",
+	event = { "BufReadPost", "BufNewFile" },
 	config = require("editor.hop"),
 }
 editor["RRethy/vim-illuminate"] = {
